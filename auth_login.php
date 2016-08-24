@@ -95,7 +95,7 @@
                     <h3 class="panel-title">Log in</h3>
                 </div>
                 <div class="panel-body">
-                    <form id="login-form" method="post" action="z_auth_authenticate.php" onsubmit="return login();">
+                    <form id="login-form" method="post" action="auth_authenticate.php" onsubmit="return login();">
                         <div class="input-group">
                             <span class="input-group-addon" >username</span>
                             <input id="username" name="username" type="text" class="form-control" placeholder="username" aria-describedby="basic-addon1">

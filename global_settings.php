@@ -1,7 +1,6 @@
 <?php
     // theater map
-    define("COLUMNS", 10);
-    define("ROWS", 5);
+    define("TABLE_ROWS", 5);
 
     // database
     define("DB_HOST", "127.0.0.1");

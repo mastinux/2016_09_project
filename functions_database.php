@@ -28,6 +28,11 @@
         return $connection;
     }
 
+    function get_user_balance($username){
+        return 50000;
+        //TODO: develop function
+    }
+
     function get_non_user_taken_seats($username){
         $rows = Array();
         $success = true;

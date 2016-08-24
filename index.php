@@ -3,7 +3,14 @@
     include 'functions_database.php';
     include 'functions_messages.php';
 
-    $username = user_logged_in();
+    session_start();
+    if ( $username = user_logged_in() ){
+        include 'auth_sessions.php';
+        set_https();
+    }
+    else{
+        unset_https();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +47,83 @@
 
     <?php include 'navbar.php'; ?>
 
-    <?php manage_messages(); ?>
+    <?php
+        manage_messages();
 
+        $line = Array(-1, -1, -1, -1);
+        $table_lines = Array();
+        for ( $i = 0; $i < TABLE_ROWS; $i++)
+            $table_lines[$i] = $line;
+    ?>
+
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <h3 class="panel-title">Shares book</h3>
+            </div>
+            <!--
+                <div class="panel-body">
+                    <p>...</p>
+                </div>
+            -->
+
+            <!-- Table -->
+            <table class="table">
+                <tr>
+                    <th>Amount of purchase</th>
+                    <th>Price of purchase</th>
+                    <th>Price of sales</th>
+                    <th>Amount of sales</th>
+                </tr>
+                <?php
+                    foreach ($table_lines as $line)
+                        if ($line[0] == -1)
+                            echo "<tr><td></td><td></td><td></td><td></td></tr>";
+                        else
+                            echo "
+                                <tr>
+                                    <td>$line[0]</td>
+                                    <td>$line[1]</td>
+                                    <td>$line[2]</td>
+                                    <td>$line[3]</td>
+                                </tr>";
+                ?>
+            </table>
+        </div>
+    </div>
+
+    <?php if ($username) { ?>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Your account</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            Username: <?php echo $username;?>
+                        </li>
+                        <li class="list-group-item">
+                            Balance: <?php echo get_user_balance($username); ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Order</h3>
+                </div>
+                <div class="panel-body">
+                    <input type="number" min="0" step="1" value="0">
+                </div>
+            </div>
+        </div>
+
+    <?php } ?>
     <script type="text/javascript">
         if (navigator.cookieEnabled == true) {
 
