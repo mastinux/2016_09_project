@@ -2,7 +2,7 @@
 
     include 'functions.php';
     include 'functions_database.php';
-    
+
     set_https();
     check_enabled_cookies();
 

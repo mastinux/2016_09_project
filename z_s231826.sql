@@ -33,3 +33,4 @@ insert into theater_booked_seat(cln, rwn, username) values(1,4,'u2@p.it');
 insert into theater_booked_seat(cln, rwn, username) values(2,4,'u2@p.it');
 insert into theater_booked_seat(cln, rwn, username) values(3,4,'u2@p.it');
 insert into theater_booked_seat(cln, rwn, username) values(4,4,'u2@p.it');
+	

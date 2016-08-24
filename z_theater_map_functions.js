@@ -237,3 +237,4 @@ function bookSelectedSeats() {
     document.cookie = "toBook=" + JSON.stringify(toBookObjects);
     window.location.replace("auth_login.php");
 }
+	

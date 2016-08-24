@@ -41,3 +41,4 @@ insert into theater_booked_seat(cln, rwn, username) values(4,4,'u2@p.it');
 use theater_db;
 select * from theater_user;
 select * from theater_booked_seat;
+	
