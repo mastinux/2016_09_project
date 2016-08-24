@@ -1,0 +1,28 @@
+body {
+    background-color: #ffffff;
+}
+
+div.no-script-warning {
+    font-weight: bold;
+    background: #cc0000;
+    text-align: center;
+}
+
+div.no-script-info {
+    font-weight: bold;
+    background: #66ccff;
+    text-align: center;
+}
+
+span.visible{color: #000000;}
+span.taken {background-color: #e60000;}
+span.free {background-color: #090;}
+span.selected {background-color: #ffff00;}
+span.booked {background-color: #ff9900;}
+span.canceled {background-color: #00b300;}
+
+span.lrg{
+    height:100%;
+    width:100%;
+    display:inline-block;
+}
