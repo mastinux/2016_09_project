@@ -30,7 +30,7 @@
     <![endif]-->
 
     <link href="shares_style.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="z_theater_map_functions.js"></script>
+    <script type="text/javascript" src="shares_functions.js"></script>
 </head>
 
 <body>
@@ -45,15 +45,9 @@
         <br>
     </noscript>
 
-    <?php include 'navbar.php'; ?>
-
     <?php
+        include 'navbar.php';
         manage_messages();
-
-        $line = Array(-1, -1, -1, -1);
-        $table_lines = Array();
-        for ( $i = 0; $i < TABLE_ROWS; $i++)
-            $table_lines[$i] = $line;
     ?>
 
     <div class="col-lg-12">
@@ -77,17 +71,27 @@
                     <th>Amount of sales</th>
                 </tr>
                 <?php
-                    foreach ($table_lines as $line)
-                        if ($line[0] == -1)
-                            echo "<tr><td></td><td></td><td></td><td></td></tr>";
+                    $purchase_shares = get_purchase_shares();
+                    $purchase_dimension = count($purchase_shares);
+                    $sales_shares = get_sales_shares();
+                    $sales_dimension = count($sales_shares);
+
+                    for ($i = 0; $i < TABLE_ROWS; $i++){
+                        echo "<tr>";
+                        if ($i < $purchase_dimension){
+                            echo "<td>".$purchase_shares[$i]['amount']."</td>";
+                            echo "<td>".$purchase_shares[$i]['price']."</td>";
+                        }
                         else
-                            echo "
-                                <tr>
-                                    <td>$line[0]</td>
-                                    <td>$line[1]</td>
-                                    <td>$line[2]</td>
-                                    <td>$line[3]</td>
-                                </tr>";
+                            echo "<td></td><td></td>";
+                        if ($i < $sales_dimension){
+                            echo "<td>".$sales_shares[$i]['amount']."</td>";
+                            echo "<td>".$sales_shares[$i]['price']."</td>";
+                        }
+                        else
+                            echo "<td></td><td></td>";
+                        echo "</tr>";
+                    }
                 ?>
             </table>
         </div>
@@ -107,6 +111,9 @@
                         <li class="list-group-item">
                             Balance: <?php echo get_user_balance($username); ?>
                         </li>
+                        <li class="list-group-item">
+                            Amount of shares: <?php echo get_amount_user_shares($username); ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -118,7 +125,28 @@
                     <h3 class="panel-title">Order</h3>
                 </div>
                 <div class="panel-body">
-                    <input type="number" min="0" step="1" value="0">
+                    <div class="input-group col-lg-12">
+
+                        <input type="number" min="0" step="1" value="0" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+<!--
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                            <a href="#" class="btn btn-default" role="button">Buy</a>
+                            <a href="#" class="btn btn-default" role="button">Sell</a>
+                        </div>
+-->
+                        <form method="post" action="order.php" onsubmit="return checkAmount();">
+
+                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                                <div class="btn-group" role="group">
+                                    <button type="submit" class="btn btn-default">Buy</button>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Sell</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

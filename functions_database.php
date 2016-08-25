@@ -29,8 +29,101 @@
     }
 
     function get_user_balance($username){
-        return 50000;
-        //TODO: develop function
+        $success = true;
+        $err_msg = "";
+
+        $connection = connect_to_database();
+
+        $sql_statement = "select balance from shares_user where email = '$username'";
+
+        try{
+            if ( !($result = mysqli_query($connection, $sql_statement)) )
+                throw new Exception("Problems while retrieving user balance.");
+        }catch (Exception $e){
+            $success = false;
+            $err_msg = $e->getMessage();
+        }
+
+        if ( !$success)
+            redirect_with_message("index.php", "d", $err_msg);
+
+        $row = mysqli_fetch_assoc($result);
+
+        $balance = $row['balance'];
+
+        mysqli_free_result($result);
+        mysqli_close($connection);
+
+        return $balance;
+    }
+
+    function get_amount_user_shares($username){
+        return 0;
+
+        $success = true;
+        $err_msg = "";
+
+        $connection = connect_to_database();
+
+        $sql_statement = "";
+
+        try{
+            if ( !($result = mysqli_query($connection, $sql_statement)) )
+                throw new Exception("Problems while retrieving user balance.");
+        }catch (Exception $e){
+            $success = false;
+            $err_msg = $e->getMessage();
+        }
+
+        if ( !$success)
+            redirect_with_message("index.php", "d", $err_msg);
+
+        $row = mysqli_fetch_assoc($result);
+
+        mysqli_free_result($result);
+        mysqli_close($connection);
+
+        return 0;
+    }
+
+    function get_purchase_shares(){
+        return get_shares('purchase');
+    }
+
+    function get_sales_shares(){
+        return get_shares('sales');
+    }
+
+    function get_shares($shares_type){
+        $rows = Array();
+        $success = true;
+        $err_msg = "";
+
+        $connection = connect_to_database();
+
+        if ($shares_type)
+            $sql_statement = "select * from shares where shares_type != '$shares_type' order by price";
+        else
+            $sql_statement = "select * from shares";
+
+        try{
+            if ( !($result = mysqli_query($connection, $sql_statement)) )
+                throw new Exception("Problems while retrieving shares.");
+        }catch (Exception $e){
+            $success = false;
+            $err_msg = $e->getMessage();
+        }
+
+        if ( !$success)
+            redirect_with_message("index.php", "d", $err_msg);
+
+        while ($row = mysqli_fetch_assoc($result))
+            $rows[] = $row;
+
+        mysqli_free_result($result);
+        mysqli_close($connection);
+
+        return $rows;
     }
 
     function get_non_user_taken_seats($username){
