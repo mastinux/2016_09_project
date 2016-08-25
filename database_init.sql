@@ -46,7 +46,8 @@ create table shares_order(
     constraint shares_order_pk primary key (username, shares_type, order_datetime)
 );
 
-insert into shares_order(username, shares_type, amount, price) values('u1@p1.it','sales', 15, 1200);
+insert into shares_order(username, shares_type, amount, price) values('andreapantaleo@gmail.com','sales', 2, 1030);
+#update table shares set amount = amount - 2 where 
 
 use shares_db;
 select * from shares_user;

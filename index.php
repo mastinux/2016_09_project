@@ -126,8 +126,6 @@
                 </div>
                 <div class="panel-body">
                     <div class="input-group col-lg-12">
-
-                        <input type="number" min="0" step="1" value="0" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
 <!--
                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                             <a href="#" class="btn btn-default" role="button">Buy</a>
@@ -135,13 +133,17 @@
                         </div>
 -->
                         <form method="post" action="order.php" onsubmit="return checkAmount();">
+                            <input type="number" min="0" step="1" value="0" id="amount-of-shares"
+                                   name="amount" class="form-control" aria-describedby="basic-addon1">
 
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                 <div class="btn-group" role="group">
-                                    <button type="submit" class="btn btn-default">Buy</button>
+                                    <input type="submit" name="type" class="btn btn-default" value="Purchase"/>
+<!--                                    <button type="submit" class="btn btn-default">Buy</button> -->
                                 </div>
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default">Sell</button>
+                                    <input type="submit" name="type" class="btn btn-default" value="Sales"/>
+<!--                                    <button type="submit" class="btn btn-default">Sell</button> -->
                                 </div>
                             </div>
 

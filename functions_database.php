@@ -58,6 +58,7 @@
     }
 
     function get_amount_user_shares($username){
+        /* TODO: develop page */
         return 0;
 
         $success = true;
