@@ -57,20 +57,17 @@
         return $balance;
     }
 
-    function get_amount_user_shares($username){
-        /* TODO: develop page */
-        return 0;
-
+    function get_user_shares_amount($username){
         $success = true;
         $err_msg = "";
 
         $connection = connect_to_database();
 
-        $sql_statement = "";
+        $sql_statement = "select * from shares_order where username='$username' and shares_type='purchase'";
 
         try{
             if ( !($result = mysqli_query($connection, $sql_statement)) )
-                throw new Exception("Problems while retrieving user balance.");
+                throw new Exception("Problems while retrieving amount of user shares.");
         }catch (Exception $e){
             $success = false;
             $err_msg = $e->getMessage();
@@ -79,19 +76,19 @@
         if ( !$success)
             redirect_with_message("index.php", "d", $err_msg);
 
-        $row = mysqli_fetch_assoc($result);
+        $amount = mysqli_num_rows($result);
 
         mysqli_free_result($result);
         mysqli_close($connection);
 
-        return 0;
+        return $amount;
     }
 
-    function get_purchase_shares(){
+    function get_buying_shares(){
         return get_shares('purchase');
     }
 
-    function get_sales_shares(){
+    function get_selling_shares(){
         return get_shares('sales');
     }
 
@@ -103,7 +100,10 @@
         $connection = connect_to_database();
 
         if ($shares_type)
-            $sql_statement = "select * from shares where shares_type != '$shares_type' order by price";
+            if ( $shares_type == 'purchase')
+                $sql_statement = "select * from shares where shares_type = '$shares_type' and amount !=0 order by price";
+            else
+                $sql_statement = "select * from shares where shares_type = '$shares_type' and amount !=0 order by price desc";
         else
             $sql_statement = "select * from shares";
 
@@ -125,6 +125,83 @@
         mysqli_close($connection);
 
         return $rows;
+    }
+
+    function buy_shares($username, $amount){
+        $shares_type = "purchase";
+
+        manage_order($username, $shares_type, $amount);
+    }
+
+    function sell_shares($username, $amount){
+        $shares_type = "sales";
+
+        manage_order($username, $shares_type, $amount);
+    }
+
+    function manage_order($username, $shares_type, $amount){
+        $interesting_shares = Array();
+        $remaining_amount = $amount;
+
+        if ($shares_type == 'purchase')
+            $shares = get_buying_shares();
+        else
+            $shares = get_selling_shares();
+
+        echo "<br><br>";
+        foreach ($shares as $s){
+            echo $s['shares_type'], " ", $s['amount'], " ", $s['price'], "<br>";
+            if ( $remaining_amount <= $s['amount'] ){
+                update_shares__insert_shares_order__update_balance($username, $shares_type, $amount, $s['price']);
+                break;
+            }
+            else{
+
+            }
+        }
+
+        return 0;
+    }
+
+    function update_shares__insert_shares_order__update_balance($username, $shares_type, $amount, $price){
+        // TODO execute 3 operation in 1 single connection
+        $success = true;
+        $err_msg = "";
+
+        $connection = connect_to_database();
+
+        // update
+        $update_sql_statement = "update shares set amount = amount - '$amount' where price='$price'";
+
+        try{
+            if ( !mysqli_query($connection, $update_sql_statement) )
+                throw new Exception("Problems while updating shares.");
+        }catch(Exception $e){
+            $success = false;
+            $err_msg = $e->getMessage();
+        }
+
+        if ( !$success )
+            redirect_with_message("index.php", "d", $err_msg);
+
+        // TODO continue developing
+
+        //insert
+        // insert into shares_order(username, shares_type, amount, price) values('andreapantaleo@gmail.com','sales', 2, 1030);
+        $insert_sql_statement = "insert into shares_order(username, shares_type, amount, price) values('$username', '$shares_type', '$amount', '$price')";
+
+        try{
+            if ( !mysqli_query($connection, $insert_sql_statement) )
+                throw new Exception("Problems while updating shares.");
+        }catch(Exception $e){
+            $success = false;
+            $err_msg = $e->getMessage();
+        }
+
+        if ( !$success )
+            redirect_with_message("index.php", "d", $err_msg);
+
+        mysqli_close($connection);
     }
 
     function get_non_user_taken_seats($username){

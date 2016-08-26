@@ -1,7 +1,4 @@
 <?php
-    /* TODO: develop page */
-    echo "order page";
-
     include 'functions.php';
     include 'functions_database.php';
 
@@ -25,5 +22,22 @@
         }
     }
 
-    echo "<br><br>", $amount, " ",$type;
+    $username = user_logged_in();
+
+    switch ($type){
+        case "Buy":{
+            echo "<br>you want to buy ", $amount, " shares";
+            buy_shares($username, $amount);
+            break;
+        }
+        case "Sell":{
+            echo "<br>you want to sell ", $amount, " shares";
+            sell_shares($username, $amount);
+            break;
+        }
+        default:{
+            redirect_with_message("index.php", "w", "Type of action not valid set in form.");
+        }
+    }
+
 ?>

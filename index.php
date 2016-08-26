@@ -65,28 +65,28 @@
             <!-- Table -->
             <table class="table">
                 <tr>
-                    <th>Amount of purchase</th>
-                    <th>Price of purchase</th>
-                    <th>Price of sales</th>
-                    <th>Amount of sales</th>
+                    <th>Buying amount</th>
+                    <th>Buying price</th>
+                    <th>Selling price</th>
+                    <th>Selling amount</th>
                 </tr>
                 <?php
-                    $purchase_shares = get_purchase_shares();
-                    $purchase_dimension = count($purchase_shares);
-                    $sales_shares = get_sales_shares();
-                    $sales_dimension = count($sales_shares);
+                    $buying_shares = get_buying_shares();
+                    $buying_dimension = count($buying_shares);
+                    $selling_shares = get_selling_shares();
+                    $selling_dimension = count($selling_shares);
 
                     for ($i = 0; $i < TABLE_ROWS; $i++){
                         echo "<tr>";
-                        if ($i < $purchase_dimension){
-                            echo "<td>".$purchase_shares[$i]['amount']."</td>";
-                            echo "<td>".$purchase_shares[$i]['price']."</td>";
+                        if ($i < $buying_dimension){
+                            echo "<td>".$buying_shares[$i]['amount']."</td>";
+                            echo "<td>".$buying_shares[$i]['price']."</td>";
                         }
                         else
                             echo "<td></td><td></td>";
-                        if ($i < $sales_dimension){
-                            echo "<td>".$sales_shares[$i]['amount']."</td>";
-                            echo "<td>".$sales_shares[$i]['price']."</td>";
+                        if ($i < $selling_dimension){
+                            echo "<td>".$selling_shares[$i]['amount']."</td>";
+                            echo "<td>".$selling_shares[$i]['price']."</td>";
                         }
                         else
                             echo "<td></td><td></td>";
@@ -112,7 +112,7 @@
                             Balance: <?php echo get_user_balance($username); ?>
                         </li>
                         <li class="list-group-item">
-                            Amount of shares: <?php echo get_amount_user_shares($username); ?>
+                            Amount of shares: <?php echo get_user_shares_amount($username); ?>
                         </li>
                     </ul>
                 </div>
@@ -138,11 +138,11 @@
 
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                 <div class="btn-group" role="group">
-                                    <input type="submit" name="type" class="btn btn-default" value="Purchase"/>
+                                    <input type="submit" name="type" class="btn btn-default" value="Buy"/>
 <!--                                    <button type="submit" class="btn btn-default">Buy</button> -->
                                 </div>
                                 <div class="btn-group" role="group">
-                                    <input type="submit" name="type" class="btn btn-default" value="Sales"/>
+                                    <input type="submit" name="type" class="btn btn-default" value="Sell"/>
 <!--                                    <button type="submit" class="btn btn-default">Sell</button> -->
                                 </div>
                             </div>
