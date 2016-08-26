@@ -2,7 +2,15 @@
     include 'functions.php';
     include 'functions_database.php';
 
-    set_https();
+    session_start();
+    if ( $username = user_logged_in() ){
+        include 'auth_sessions.php';
+        set_https();
+    }
+    else{
+        redirect_with_message('index.php', 'w', 'You must be logged in to buy or sell shares.');
+    }
+
     check_enabled_cookies();
 
     $success = true;
@@ -21,8 +29,6 @@
             break;
         }
     }
-
-    $username = user_logged_in();
 
     switch ($type){
         case "Buy":{
