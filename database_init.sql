@@ -34,8 +34,8 @@ create table shares_order(
 #    constraint shares_order_pk primary key (username, shares_type, price, order_datetime)
 );
 
-insert into shares_user(first_name, last_name, email, pw) values('u1', 'u1', 'u1@p1.it', md5('p1'));
-insert into shares_user(first_name, last_name, email, pw) values('u2', 'u2', 'u1@p2.it', md5('p2'));
+insert into shares_user(first_name, last_name, email, pw) values('u1', 'u1', 'u1@p.it', md5('p1'));
+insert into shares_user(first_name, last_name, email, pw) values('u2', 'u2', 'u2@p.it', md5('p2'));
 insert into shares_user(first_name, last_name, email, pw) values('Andrea', 'Pantaleo', 'andreapantaleo@gmail.com', md5('asdf'));
 
 insert into shares(shares_type, amount, price) values('buying', 2, 1000);
@@ -49,10 +49,32 @@ insert into shares(shares_type, amount, price) values('selling', 8, 1100);
 insert into shares(shares_type, amount, price) values('selling', 6, 1150);
 insert into shares(shares_type, amount, price) values('selling', 15, 1200);
 /*
+# buying 2 4 2 | 2
 update shares set amount = (amount - 2) where price = 800 and shares_type = 'buying';
-insert into shares_order(username, shares_type, amount, price) values('andreapantaleo@gmail.com', 'buying', 2, 800);
-update shares_user set balance = (balance - (2 * 800)) where email = 'andreapantaleo@gmail.com';
-*/
+insert into shares_order(username, shares_type, amount, price) values('u1@p.it', 'buying', 2, 800);
+update shares_user set balance = (balance - (2 * 800)) where email = 'u1@p.it';
+
+update shares set amount = (amount - 4) where price = 800 and shares_type = 'buying';
+insert into shares_order(username, shares_type, amount, price) values('u2@p.it', 'buying', 4, 800);
+update shares_user set balance = (balance - (4 * 800)) where email = 'u2@p.it';
+
+update shares set amount = (amount - 2) where price = 800 and shares_type = 'buying';
+insert into shares_order(username, shares_type, amount, price) values('u1@p.it', 'buying', 2, 800);
+update shares_user set balance = (balance - (2 * 800)) where email = 'u1@p.it';
+
+update shares set amount = (amount - 2) where price = 900 and shares_type = 'buying';
+insert into shares_order(username, shares_type, amount, price) values('u2@p.it', 'buying', 2, 900);
+update shares_user set balance = (balance - (2 * 900)) where email = 'u2@p.it';
+
+update shares set amount = (amount - 1) where price = 1200 and shares_type = 'selling';
+insert into shares_order(username, shares_type, amount, price) values('u1@p.it', 'selling', 1, 1200);
+update shares_user set balance = (balance + (1 * 1200)) where email = 'u1@p.it';
+
+update shares set amount = (amount - 3) where price = 1200 and shares_type = 'selling';
+insert into shares_order(username, shares_type, amount, price) values('u2@p.it', 'selling', 3, 1200);
+update shares_user set balance = (balance +	 (3 * 1200)) where email = 'u2@p.it';
+
+/*
 use shares_db;
 select * from shares_user;
 select * from shares order by shares_type, price;

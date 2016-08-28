@@ -7,7 +7,8 @@
     set_https();
     check_enabled_cookies();
 
-    $username = user_logged_in();
+    if (user_logged_in())
+        redirect_with_message('index.php', '', '');
 ?>
 <!DOCTYPE html>
 <html lang="en">
