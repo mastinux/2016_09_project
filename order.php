@@ -32,12 +32,10 @@
 
     switch ($type){
         case "Buy":{
-            echo "<br>you want to buy ", $amount, " shares";
             buy_shares($username, $amount);
             break;
         }
         case "Sell":{
-            echo "<br>you want to sell ", $amount, " shares";
             sell_shares($username, $amount);
             break;
         }

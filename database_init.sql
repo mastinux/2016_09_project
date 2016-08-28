@@ -10,7 +10,7 @@ create table shares_user(
 	last_name varchar(320) not null,
 	email varchar(320) not null,
 	pw varchar(255) not null,
-    balance double default 50000,
+    balance double default 50000 check (balance >= 0),
 	primary key (email)
 );
 
@@ -48,11 +48,11 @@ insert into shares(shares_type, amount, price) values('selling', 11, 1050);
 insert into shares(shares_type, amount, price) values('selling', 8, 1100);
 insert into shares(shares_type, amount, price) values('selling', 6, 1150);
 insert into shares(shares_type, amount, price) values('selling', 15, 1200);
-#/*
+/*
 update shares set amount = (amount - 2) where price = 800 and shares_type = 'buying';
 insert into shares_order(username, shares_type, amount, price) values('andreapantaleo@gmail.com', 'buying', 2, 800);
 update shares_user set balance = (balance - (2 * 800)) where email = 'andreapantaleo@gmail.com';
-#*/
+*/
 use shares_db;
 select * from shares_user;
 select * from shares order by shares_type, price;
