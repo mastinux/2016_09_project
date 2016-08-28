@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d5e82881-8226-4c2f-9551-1a9df2fcebf2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/auth_login.php" afterPath="$PROJECT_DIR$/auth_login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database_init.sql" afterPath="$PROJECT_DIR$/database_init.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions_database.php" afterPath="$PROJECT_DIR$/functions_database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global_settings.php" afterPath="$PROJECT_DIR$/global_settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar.php" afterPath="$PROJECT_DIR$/navbar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/order.php" afterPath="$PROJECT_DIR$/order.php" />
     </list>
     <ignored path="2016_09_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,31 +30,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="functions_database.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/functions_database.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-              <folding>
-                <element signature="e#6245#6582#0#PHP" expanded="false" />
-                <marker date="1472389262656" expanded="true" signature="993:1050" ph="select balan... shares_user" />
-                <marker date="1472389262656" expanded="true" signature="1800:1935" ph="select sum(a... shares_order" />
-                <marker date="1472389262656" expanded="true" signature="2953:3008" ph="select * fro... shares_o" />
-                <marker date="1472389262656" expanded="true" signature="2953:3031" ph="select * fro... shares_order" />
-                <marker date="1472389262656" expanded="true" signature="2953:3038" ph="select * fro... shares_order" />
-                <marker date="1472389262656" expanded="true" signature="3848:3903" ph="select * fro... shares" />
-                <marker date="1472389262656" expanded="true" signature="3848:3933" ph="select * fro... shares" />
-                <marker date="1472389262656" expanded="true" signature="3987:4077" ph="select * fro... shares" />
-                <marker date="1472389262656" expanded="true" signature="4123:4143" ph="select * fro... shares" />
-                <marker date="1472389262656" expanded="true" signature="7661:7698" ph="update share... " />
-                <marker date="1472389262656" expanded="true" signature="7661:7793" ph="update share... " />
-                <marker date="1472389262656" expanded="true" signature="8016:8162" ph="insert into shares_order... " />
-                <marker date="1472389262656" expanded="true" signature="8557:8680" ph="update share... " />
-                <marker date="1472389262656" expanded="true" signature="9563:9626" ph="select * fro... theater_booked_seat" />
-                <marker date="1472389262656" expanded="true" signature="10504:10566" ph="select * fro... theater_booked_seat" />
-                <marker date="1472389262656" expanded="true" signature="11916:12001" ph="insert into theater_booked_seat... " />
-                <marker date="1472389262656" expanded="true" signature="13316:13404" ph="delete from " />
-              </folding>
+            <state relative-caret-position="144">
+              <caret line="198" column="47" selection-start-line="198" selection-start-column="47" selection-end-line="198" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth_login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,14 +62,14 @@
         <option value="$PROJECT_DIR$/z_auth_functions.js" />
         <option value="$PROJECT_DIR$/auth_register.php" />
         <option value="$PROJECT_DIR$/auth_authenticate.php" />
-        <option value="$PROJECT_DIR$/navbar.php" />
-        <option value="$PROJECT_DIR$/global_settings.php" />
         <option value="$PROJECT_DIR$/shares_functions.js" />
         <option value="$PROJECT_DIR$/database_init.sql" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/order.php" />
         <option value="$PROJECT_DIR$/auth_login.php" />
+        <option value="$PROJECT_DIR$/global_settings.php" />
+        <option value="$PROJECT_DIR$/navbar.php" />
         <option value="$PROJECT_DIR$/functions_database.php" />
+        <option value="$PROJECT_DIR$/order.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -91,9 +85,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -120,8 +114,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -142,6 +134,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -202,7 +196,8 @@
       <workItem from="1472193207761" duration="5372000" />
       <workItem from="1472236686801" duration="8431000" />
       <workItem from="1472291757862" duration="647000" />
-      <workItem from="1472383261786" duration="5970000" />
+      <workItem from="1472383261786" duration="6044000" />
+      <workItem from="1472411926227" duration="4807000" />
     </task>
     <task id="LOCAL-00001" summary="developed first part of order process">
       <created>1472198562632</created>
@@ -211,11 +206,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472198562632</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="started preparing database init">
+      <created>1472389352180</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1472389352181</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35994000" />
+    <option name="totallyTimeSpent" value="40875000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -227,10 +229,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16733068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16972111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -262,7 +264,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="developed first part of order process" />
-    <option name="LAST_COMMIT_MESSAGE" value="developed first part of order process" />
+    <MESSAGE value="started preparing database init" />
+    <option name="LAST_COMMIT_MESSAGE" value="started preparing database init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -271,6 +274,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/functions_database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6203#6540#0#PHP" expanded="false" />
+            <marker date="1472414887662" expanded="true" signature="951:1008" ph="select balan... shares_user" />
+            <marker date="1472414887662" expanded="true" signature="1758:1893" ph="select sum(a... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2966" ph="select * fro... shares_o" />
+            <marker date="1472414887662" expanded="true" signature="2911:2989" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2996" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="3806:3861" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3806:3891" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3945:4035" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="4081:4101" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="7619:7656" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7619:7751" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7974:8120" ph="insert into shares_order... " />
+            <marker date="1472414887662" expanded="true" signature="8515:8638" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="9521:9584" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="10462:10524" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="11874:11959" ph="insert into theater_booked_seat... " />
+            <marker date="1472414887662" expanded="true" signature="13274:13362" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3150">
@@ -284,24 +314,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6245#6582#0#PHP" expanded="false" />
-            <marker date="1472389262656" expanded="true" signature="993:1050" ph="select balan... shares_user" />
-            <marker date="1472389262656" expanded="true" signature="1800:1935" ph="select sum(a... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3008" ph="select * fro... shares_o" />
-            <marker date="1472389262656" expanded="true" signature="2953:3031" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3038" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="3848:3903" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3848:3933" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3987:4077" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="4123:4143" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="7661:7698" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="7661:7793" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="8016:8162" ph="insert into shares_order... " />
-            <marker date="1472389262656" expanded="true" signature="8557:8680" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="9563:9626" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="10504:10566" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="11916:12001" ph="insert into theater_booked_seat... " />
-            <marker date="1472389262656" expanded="true" signature="13316:13404" ph="delete from " />
+            <element signature="e#6203#6540#0#PHP" expanded="false" />
+            <marker date="1472414887662" expanded="true" signature="951:1008" ph="select balan... shares_user" />
+            <marker date="1472414887662" expanded="true" signature="1758:1893" ph="select sum(a... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2966" ph="select * fro... shares_o" />
+            <marker date="1472414887662" expanded="true" signature="2911:2989" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2996" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="3806:3861" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3806:3891" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3945:4035" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="4081:4101" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="7619:7656" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7619:7751" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7974:8120" ph="insert into shares_order... " />
+            <marker date="1472414887662" expanded="true" signature="8515:8638" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="9521:9584" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="10462:10524" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="11874:11959" ph="insert into theater_booked_seat... " />
+            <marker date="1472414887662" expanded="true" signature="13274:13362" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -327,24 +357,24 @@
         <state relative-caret-position="2214">
           <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
           <folding>
-            <element signature="e#6245#6582#0#PHP" expanded="false" />
-            <marker date="1472389262656" expanded="true" signature="993:1050" ph="select balan... shares_user" />
-            <marker date="1472389262656" expanded="true" signature="1800:1935" ph="select sum(a... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3008" ph="select * fro... shares_o" />
-            <marker date="1472389262656" expanded="true" signature="2953:3031" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3038" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="3848:3903" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3848:3933" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3987:4077" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="4123:4143" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="7661:7698" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="7661:7793" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="8016:8162" ph="insert into shares_order... " />
-            <marker date="1472389262656" expanded="true" signature="8557:8680" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="9563:9626" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="10504:10566" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="11916:12001" ph="insert into theater_booked_seat... " />
-            <marker date="1472389262656" expanded="true" signature="13316:13404" ph="delete from " />
+            <element signature="e#6203#6540#0#PHP" expanded="false" />
+            <marker date="1472414887662" expanded="true" signature="951:1008" ph="select balan... shares_user" />
+            <marker date="1472414887662" expanded="true" signature="1758:1893" ph="select sum(a... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2966" ph="select * fro... shares_o" />
+            <marker date="1472414887662" expanded="true" signature="2911:2989" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2996" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="3806:3861" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3806:3891" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3945:4035" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="4081:4101" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="7619:7656" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7619:7751" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7974:8120" ph="insert into shares_order... " />
+            <marker date="1472414887662" expanded="true" signature="8515:8638" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="9521:9584" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="10462:10524" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="11874:11959" ph="insert into theater_booked_seat... " />
+            <marker date="1472414887662" expanded="true" signature="13274:13362" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -362,24 +392,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6245#6582#0#PHP" expanded="false" />
-            <marker date="1472389262656" expanded="true" signature="993:1050" ph="select balan... shares_user" />
-            <marker date="1472389262656" expanded="true" signature="1800:1935" ph="select sum(a... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3008" ph="select * fro... shares_o" />
-            <marker date="1472389262656" expanded="true" signature="2953:3031" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3038" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="3848:3903" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3848:3933" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3987:4077" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="4123:4143" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="7661:7698" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="7661:7793" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="8016:8162" ph="insert into shares_order... " />
-            <marker date="1472389262656" expanded="true" signature="8557:8680" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="9563:9626" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="10504:10566" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="11916:12001" ph="insert into theater_booked_seat... " />
-            <marker date="1472389262656" expanded="true" signature="13316:13404" ph="delete from " />
+            <element signature="e#6203#6540#0#PHP" expanded="false" />
+            <marker date="1472414887662" expanded="true" signature="951:1008" ph="select balan... shares_user" />
+            <marker date="1472414887662" expanded="true" signature="1758:1893" ph="select sum(a... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2966" ph="select * fro... shares_o" />
+            <marker date="1472414887662" expanded="true" signature="2911:2989" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2996" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="3806:3861" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3806:3891" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3945:4035" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="4081:4101" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="7619:7656" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7619:7751" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7974:8120" ph="insert into shares_order... " />
+            <marker date="1472414887662" expanded="true" signature="8515:8638" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="9521:9584" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="10462:10524" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="11874:11959" ph="insert into theater_booked_seat... " />
+            <marker date="1472414887662" expanded="true" signature="13274:13362" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -397,24 +427,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6245#6582#0#PHP" expanded="false" />
-            <marker date="1472389262656" expanded="true" signature="993:1050" ph="select balan... shares_user" />
-            <marker date="1472389262656" expanded="true" signature="1800:1935" ph="select sum(a... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3008" ph="select * fro... shares_o" />
-            <marker date="1472389262656" expanded="true" signature="2953:3031" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3038" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="3848:3903" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3848:3933" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3987:4077" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="4123:4143" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="7661:7698" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="7661:7793" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="8016:8162" ph="insert into shares_order... " />
-            <marker date="1472389262656" expanded="true" signature="8557:8680" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="9563:9626" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="10504:10566" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="11916:12001" ph="insert into theater_booked_seat... " />
-            <marker date="1472389262656" expanded="true" signature="13316:13404" ph="delete from " />
+            <element signature="e#6203#6540#0#PHP" expanded="false" />
+            <marker date="1472414887662" expanded="true" signature="951:1008" ph="select balan... shares_user" />
+            <marker date="1472414887662" expanded="true" signature="1758:1893" ph="select sum(a... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2966" ph="select * fro... shares_o" />
+            <marker date="1472414887662" expanded="true" signature="2911:2989" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2996" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="3806:3861" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3806:3891" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3945:4035" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="4081:4101" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="7619:7656" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7619:7751" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7974:8120" ph="insert into shares_order... " />
+            <marker date="1472414887662" expanded="true" signature="8515:8638" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="9521:9584" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="10462:10524" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="11874:11959" ph="insert into theater_booked_seat... " />
+            <marker date="1472414887662" expanded="true" signature="13274:13362" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -510,32 +540,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shares_functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth_authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database_init.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global_settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -547,61 +555,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/global_settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="45" column="35" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="175" column="51" selection-start-line="175" selection-start-column="51" selection-end-line="175" selection-end-column="51" />
+        <state relative-caret-position="180">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions_database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        <state relative-caret-position="270">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding>
-            <element signature="e#6245#6582#0#PHP" expanded="false" />
-            <marker date="1472389262656" expanded="true" signature="993:1050" ph="select balan... shares_user" />
-            <marker date="1472389262656" expanded="true" signature="1800:1935" ph="select sum(a... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3008" ph="select * fro... shares_o" />
-            <marker date="1472389262656" expanded="true" signature="2953:3031" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="2953:3038" ph="select * fro... shares_order" />
-            <marker date="1472389262656" expanded="true" signature="3848:3903" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3848:3933" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="3987:4077" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="4123:4143" ph="select * fro... shares" />
-            <marker date="1472389262656" expanded="true" signature="7661:7698" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="7661:7793" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="8016:8162" ph="insert into shares_order... " />
-            <marker date="1472389262656" expanded="true" signature="8557:8680" ph="update share... " />
-            <marker date="1472389262656" expanded="true" signature="9563:9626" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="10504:10566" ph="select * fro... theater_booked_seat" />
-            <marker date="1472389262656" expanded="true" signature="11916:12001" ph="insert into theater_booked_seat... " />
-            <marker date="1472389262656" expanded="true" signature="13316:13404" ph="delete from " />
+            <element signature="e#6203#6540#0#PHP" expanded="false" />
+            <marker date="1472414887662" expanded="true" signature="951:1008" ph="select balan... shares_user" />
+            <marker date="1472414887662" expanded="true" signature="1758:1893" ph="select sum(a... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2966" ph="select * fro... shares_o" />
+            <marker date="1472414887662" expanded="true" signature="2911:2989" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="2911:2996" ph="select * fro... shares_order" />
+            <marker date="1472414887662" expanded="true" signature="3806:3861" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3806:3891" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="3945:4035" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="4081:4101" ph="select * fro... shares" />
+            <marker date="1472414887662" expanded="true" signature="7619:7656" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7619:7751" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="7974:8120" ph="insert into shares_order... " />
+            <marker date="1472414887662" expanded="true" signature="8515:8638" ph="update share... " />
+            <marker date="1472414887662" expanded="true" signature="9521:9584" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="10462:10524" ph="select * fro... theater_booked_seat" />
+            <marker date="1472414887662" expanded="true" signature="11874:11959" ph="insert into theater_booked_seat... " />
+            <marker date="1472414887662" expanded="true" signature="13274:13362" ph="delete from " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shares_functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth_authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <marker date="1472043137978" expanded="true" signature="1280:1357" ph="select * fro... shares_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="198" column="47" selection-start-line="198" selection-start-column="47" selection-end-line="198" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

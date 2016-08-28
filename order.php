@@ -30,6 +30,9 @@
         }
     }
 
+    if ($amount <= 0)
+        redirect_with_message('index.php', 'w', 'Order amount must be greater than 0. Please enter a proper value.');
+
     switch ($type){
         case "Buy":{
             buy_shares($username, $amount);

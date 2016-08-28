@@ -2,8 +2,6 @@
 
     // TODO: sanitize input from client, also with database connection
 
-    // TODO: init database as in point 4
-
     function sanitize_string($var) {
         $var = strip_tags($var);
         $var = htmlentities($var);
