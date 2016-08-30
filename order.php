@@ -10,7 +10,6 @@
     else{
         redirect_with_message('index.php', 'w', 'You must be logged in to buy or sell shares.');
     }
-/*
 
     check_enabled_cookies();
 
@@ -34,7 +33,6 @@
     if ($amount <= 0)
         redirect_with_message('index.php', 'w', 'Order amount must be greater than 0. Please enter a proper value.');
 
-
     switch ($type){
         case "Buy":{
             buy_shares($username, $amount);
@@ -48,5 +46,4 @@
             redirect_with_message("index.php", "w", "Type of action not valid set in form.");
         }
     }
-*/
 ?>

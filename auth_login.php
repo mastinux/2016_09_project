@@ -4,7 +4,6 @@
     include 'functions_database.php';
     include 'functions_messages.php';
 
-    // TODO manage https and cookie controls to allow 'Session time out.' message visualization
     set_https();
     check_enabled_cookies();
 

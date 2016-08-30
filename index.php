@@ -18,7 +18,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Shares Manager</title>
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +50,6 @@
 
     <div class="col-lg-4" id="left-panel">
         <div class="panel panel-default">
-            <!-- Default panel contents -->
             <div class="panel-heading">
                 <?php if ($username){?>
                     Your Account
@@ -104,17 +102,10 @@
                     if (count($shares) > 0){
                         ?>
                         <div class="panel panel-success">
-                                <!-- Default panel contents -->
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Your past orders</h3>
                                 </div>
-                                <!--
-                                    <div class="panel-body">
-                                        <p>...</p>
-                                    </div>
-                                -->
 
-                                <!-- Table -->
                                 <table class="table">
                                     <tr>
                                         <th>Order no.</th>
@@ -145,17 +136,9 @@
 
     <div class="col-lg-8" id="right-panels">
         <div class="panel panel-primary">
-            <!-- Default panel contents -->
             <div class="panel-heading">
                 <h3 class="panel-title">Shares book</h3>
             </div>
-            <!--
-                <div class="panel-body">
-                    <p>...</p>
-                </div>
-            -->
-
-            <!-- Table -->
             <table class="table">
                 <tr>
                     <th>Buying amount</th>
