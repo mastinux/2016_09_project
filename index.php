@@ -117,7 +117,7 @@
                                 <!-- Table -->
                                 <table class="table">
                                     <tr>
-                                        <th>No.</th>
+                                        <th>Order no.</th>
                                         <th>Type</th>
                                         <th>Amount</th>
                                         <th>Price</th>

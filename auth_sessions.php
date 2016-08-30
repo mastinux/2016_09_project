@@ -24,7 +24,6 @@
         session_destroy();  // destroy session
         // redirect client to login page
         redirect_with_message("auth_login.php", "w", "Session time out.");
-        exit; // IMPORTANT to avoid further output from the script
     } else {
         $_SESSION['231826_time']=time(); /* update time */
     }

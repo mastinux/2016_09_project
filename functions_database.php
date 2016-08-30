@@ -190,7 +190,7 @@
         else {
             $user_shares_amount = get_user_shares_amount($username);
             if ( $user_shares_amount == 0 || $user_shares_amount < $amount)
-                redirect_with_message('index.php', 'w', 'Before you can sell shares, you have to buy more of them.');
+                redirect_with_message('index.php', 'w', 'You have '.$user_shares_amount.' shares, to sell '.$amount.' shares you have to buy more of them.');
             $shares = get_selling_shares();
         }
 
@@ -220,13 +220,13 @@
         */
 
         if ( $shares_type == 'buying' && get_user_balance($username) < $order_cost )
-            redirect_with_message('index.php', 'w', 'You have not enough money ('.$order_cost.') to buy these shares. Please reduce the amount or sell some shares.');
+            redirect_with_message('index.php', 'w', 'You have not enough money ('.$order_cost.') to buy '.$amount.' shares. Please reduce the amount or sell some of your shares.');
 
         if ($remaining_amount != 0)
             redirect_with_message('index.php', 'w', 'Sorry, there are not '.$amount.' shares available for '.$shares_type.' action.');
 
         update_shares__insert_shares_order__update_balance($username, $shares_type, $interesting_shares);
-        redirect_with_message('index.php', 's', 'Action of '.$shares_type.' shares succeeded.');
+        redirect_with_message('index.php', 's', 'Action of '.$shares_type.' '.$amount.' shares succeeded.');
     }
 
     function update_shares__insert_shares_order__update_balance($username, $shares_type, $shares){

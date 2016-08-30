@@ -1,14 +1,13 @@
 <?php
+
     include 'functions.php';
     include 'functions_database.php';
     include 'functions_messages.php';
 
-    session_start();
+    // TODO manage https and cookie controls to allow 'Session time out.' message visualization
     set_https();
     check_enabled_cookies();
 
-    if (user_logged_in())
-        redirect_with_message('index.php', '', '');
 ?>
 <!DOCTYPE html>
 <html lang="en">

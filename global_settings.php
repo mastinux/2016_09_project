@@ -9,6 +9,6 @@
     define("DB_DATABASE", "shares_db");
 
     // session
-    define("SESSION_TIMEOUT", 2*60); //seconds
+    define("SESSION_TIMEOUT", 10); //seconds
 ?>
 

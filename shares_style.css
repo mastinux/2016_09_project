@@ -1,7 +1,8 @@
+/*
 body {
     background-color: #ffffff;
 }
-
+*/
 div.no-script-warning {
     font-weight: bold;
     background: #cc0000;
@@ -13,7 +14,7 @@ div.no-script-info {
     background: #66ccff;
     text-align: center;
 }
-
+/*
 span.visible{color: #000000;}
 span.taken {background-color: #e60000;}
 span.free {background-color: #090;}
@@ -26,3 +27,4 @@ span.lrg{
     width:100%;
     display:inline-block;
 }
+*/

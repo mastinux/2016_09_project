@@ -36,7 +36,7 @@ create table shares_order(
 
 insert into shares_user(first_name, last_name, email, pw) values('u1', 'u1', 'u1@p.it', md5('p1'));
 insert into shares_user(first_name, last_name, email, pw) values('u2', 'u2', 'u2@p.it', md5('p2'));
-insert into shares_user(first_name, last_name, email, pw) values('Andrea', 'Pantaleo', 'andreapantaleo@gmail.com', md5('asdf'));
+insert into shares_user(first_name, last_name, email, pw, balance) values('Andrea', 'Pantaleo', 'andreapantaleo@gmail.com', md5('asdf'), 2920);
 
 insert into shares(shares_type, amount, price) values('buying', 2, 1000);
 insert into shares(shares_type, amount, price) values('buying', 10, 960);
