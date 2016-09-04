@@ -30,6 +30,7 @@
 
     <link href="shares_style.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="shares_functions.js"></script>
+    <script type="text/javascript" src="general_functions.js"></script>
 </head>
 
 <body>
@@ -117,7 +118,10 @@
                                     foreach ($shares as $s){
                                         echo "<tr>";
                                         echo "<td>".$s['shares_order_id']."</td>";
-                                        echo "<td>".$s['shares_type']."</td>";
+                                        if ($s['shares_type'] == 'offer')
+                                            echo "<td>purchase</td>";
+                                        else
+                                            echo "<td>sale</td>";
                                         echo "<td>".$s['amount']."</td>";
                                         echo "<td>".$s['price']."</td>";
                                         echo "</tr>";
@@ -141,28 +145,32 @@
             </div>
             <table class="table">
                 <tr>
-                    <th>Buying amount</th>
-                    <th>Buying price</th>
-                    <th>Selling price</th>
-                    <th>Selling amount</th>
+                    <th>Demand amount</th>
+                    <th>Demand price</th>
+                    <th>Offer price</th>
+                    <th>Offer amount</th>
                 </tr>
                 <?php
-                $buying_shares = get_buying_shares();
-                $buying_dimension = count($buying_shares);
-                $selling_shares = get_selling_shares();
-                $selling_dimension = count($selling_shares);
+                $demand_shares = get_demand_shares();
+                if ( count($demand_shares) > TABLE_ROWS)
+                    array_slice($demand_shares, 0, 5);
+                $demand_dimension = count($demand_shares);
+                $offer_shares = get_offer_shares();
+                if ( count($offer_shares) > TABLE_ROWS)
+                    array_slice($offer_shares, 0, 5);
+                $offer_dimension = count($offer_shares);
 
                 for ($i = 0; $i < TABLE_ROWS; $i++){
                     echo "<tr>";
-                    if ($i < $buying_dimension){
-                        echo "<td>".$buying_shares[$i]['amount']."</td>";
-                        echo "<td>".$buying_shares[$i]['price']."</td>";
+                    if ($i < $demand_dimension){
+                        echo "<td>".$demand_shares[$i]['amount']."</td>";
+                        echo "<td>".$demand_shares[$i]['price']."</td>";
                     }
                     else
                         echo "<td></td><td></td>";
-                    if ($i < $selling_dimension){
-                        echo "<td>".$selling_shares[$i]['amount']."</td>";
-                        echo "<td>".$selling_shares[$i]['price']."</td>";
+                    if ($i < $offer_dimension){
+                        echo "<td>".$offer_shares[$i]['amount']."</td>";
+                        echo "<td>".$offer_shares[$i]['price']."</td>";
                     }
                     else
                         echo "<td></td><td></td>";
@@ -186,10 +194,10 @@
                         </div>
                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                             <div class="btn-group" role="group">
-                                <input type="submit" name="type" class="btn btn-default" value="Buy"/>
+                                <input type="submit" name="type" class="btn btn-default" value="Sell"/>
                             </div>
                             <div class="btn-group" role="group">
-                                <input type="submit" name="type" class="btn btn-default" value="Sell"/>
+                                <input type="submit" name="type" class="btn btn-default" value="Buy"/>
                             </div>
                         </div>
                     </form>

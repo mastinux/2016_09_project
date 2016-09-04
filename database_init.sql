@@ -15,7 +15,7 @@ create table shares_user(
 );
 
 create table shares(	
-    shares_type enum('buying', 'selling') not null,
+    shares_type enum('demand', 'offer') not null,
     amount integer unsigned not null,
     price double unsigned not null,
 	constraint shares_pk primary key (shares_type, price)
@@ -24,7 +24,7 @@ create table shares(
 create table shares_order(
 	shares_order_id int not null auto_increment,
 	username varchar(320) not null,
-    shares_type enum('buying', 'selling') not null,
+    shares_type enum('demand', 'offer') not null,
     amount integer unsigned not null check (amount >= 0),
     price double unsigned not null,
 #    order_datetime datetime not null default current_timestamp,
@@ -38,17 +38,18 @@ insert into shares_user(first_name, last_name, email, pw) values('u1', 'u1', 'u1
 insert into shares_user(first_name, last_name, email, pw) values('u2', 'u2', 'u2@p.it', md5('p2'));
 insert into shares_user(first_name, last_name, email, pw, balance) values('Andrea', 'Pantaleo', 'andreapantaleo@gmail.com', md5('asdf'), 2920);
 
-insert into shares(shares_type, amount, price) values('buying', 2, 1000);
-insert into shares(shares_type, amount, price) values('buying', 10, 960);
-insert into shares(shares_type, amount, price) values('buying', 4, 950);
-insert into shares(shares_type, amount, price) values('buying', 3, 900);
-insert into shares(shares_type, amount, price) values('buying', 8, 800);
-insert into shares(shares_type, amount, price) values('selling', 3, 1030);
-insert into shares(shares_type, amount, price) values('selling', 11, 1050);
-insert into shares(shares_type, amount, price) values('selling', 8, 1100);
-insert into shares(shares_type, amount, price) values('selling', 6, 1150);
-insert into shares(shares_type, amount, price) values('selling', 15, 1200);
+insert into shares(shares_type, amount, price) values('demand', 2, 1000);
+insert into shares(shares_type, amount, price) values('demand', 10, 960);
+insert into shares(shares_type, amount, price) values('demand', 4, 950);
+insert into shares(shares_type, amount, price) values('demand', 3, 900);
+insert into shares(shares_type, amount, price) values('demand', 8, 800);
 
+insert into shares(shares_type, amount, price) values('offer', 3, 1030);
+insert into shares(shares_type, amount, price) values('offer', 11, 1050);
+insert into shares(shares_type, amount, price) values('offer', 8, 1100);
+insert into shares(shares_type, amount, price) values('offer', 6, 1150);
+insert into shares(shares_type, amount, price) values('offer', 15, 1200);
+/*
 # u1 buys 6 shares
 update shares set amount = (amount - 6) where price = 800 and shares_type = 'buying';
 insert into shares_order(username, shares_type, amount, price) values('u1@p.it', 'buying', 6, 800);

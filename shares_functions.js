@@ -3,6 +3,8 @@ function checkAmount(){
     
     if (amount > 0)
         return true;
-    else
+    else {
+        printMessage("warning", "Order amount must be greater than 0.");
         return false;
+    }
 }

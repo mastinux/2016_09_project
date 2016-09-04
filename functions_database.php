@@ -93,7 +93,7 @@
     }
 
     function get_user_shares_amount($username){
-        return get_user_shares_amount_by_type($username, 'buying') - get_user_shares_amount_by_type($username, 'selling');
+        return get_user_shares_amount_by_type($username, 'offer') - get_user_shares_amount_by_type($username, 'demand');
     }
 
     function get_user_ordered_shares($username){
@@ -133,7 +133,7 @@
         $connection = connect_to_database();
 
         if ($shares_type)
-            if ( $shares_type == 'buying')
+            if ( $shares_type == 'offer')
                 $sql_statement = "select * from shares where shares_type = '$shares_type' and amount !=0 order by price";
             else
                 $sql_statement = "select * from shares where shares_type = '$shares_type' and amount !=0 order by price desc";
@@ -160,41 +160,42 @@
         return $rows;
     }
 
-    function get_buying_shares(){
-        return get_shares('buying');
+    function get_offer_shares(){
+        return get_shares('offer');
     }
 
-    function get_selling_shares(){
-        return get_shares('selling');
+    function get_demand_shares(){
+        return get_shares('demand');
     }
 
     function buy_shares($username, $amount){
-        $shares_type = "buying";
+        $action = "buy";
 
-        manage_order($username, $shares_type, $amount);
+        manage_order($username, $action, $amount);
     }
 
     function sell_shares($username, $amount){
-        $shares_type = "selling";
+        $action = "sell";
 
-        manage_order($username, $shares_type, $amount);
+        manage_order($username, $action, $amount);
     }
 
-    function manage_order($username, $shares_type, $amount){
+    function manage_order($username, $action, $amount){
         $interesting_shares = Array();
         $remaining_amount = $amount;
-        $order_cost = 0;
+        $order_value = 0;
 
         $amount = sanitize_string($amount);
 
-        if ($shares_type == 'buying') {
-            $shares = get_buying_shares();
+        if ($action == 'buy') {
+            $shares = get_offer_shares();
         }
         else {
+            // $action == 'sell'
             $user_shares_amount = get_user_shares_amount($username);
             if ( $user_shares_amount == 0 || $user_shares_amount < $amount)
                 redirect_with_message('index.php', 'w', 'You have '.$user_shares_amount.' shares, to sell '.$amount.' shares you have to buy more of them.');
-            $shares = get_selling_shares();
+            $shares = get_demand_shares();
         }
 
         foreach ($shares as $s){
@@ -202,39 +203,34 @@
                 $s['amount'] = $remaining_amount;
                 $remaining_amount = 0;
                 $interesting_shares[] = $s;
-                $order_cost += $s['amount'] * $s['price'];
+                $order_value += $s['amount'] * $s['price'];
                 break;
             }
             else{
                 $remaining_amount -= $s['amount'];
                 $interesting_shares[] = $s;
-                $order_cost += $s['amount'] * $s['price'];
+                $order_value += $s['amount'] * $s['price'];
             }
         }
 
-        /*
-        echo $username, "<br>";
-        echo "balance: ", get_user_balance($username), "<br>";
-        echo "cost: ", $order_cost, "<br><br>";
-        foreach ($interesting_shares as $interesting_share) {
-            echo $interesting_share['amount'], " ", $interesting_share['price'],"<br>";
-        }
-        echo "<br>";
-        */
-
-        if ( $shares_type == 'buying' && get_user_balance($username) < $order_cost )
-            redirect_with_message('index.php', 'w', 'You have not enough money ('.$order_cost.') to buy '.$amount.' shares. Please reduce the amount or sell some of your shares.');
+        if ( $action == 'buy' && get_user_balance($username) < $order_value )
+            redirect_with_message('index.php', 'w', 'You have not enough money ('.$order_value.') to buy '.$amount.' shares. Please reduce the amount or sell some of your shares.');
 
         if ($remaining_amount != 0)
-            redirect_with_message('index.php', 'w', 'Sorry, there are not '.$amount.' shares available for '.$shares_type.' action.');
+            redirect_with_message('index.php', 'w', 'Sorry, there are not '.$amount.' shares available for your action.');
 
-        update_shares__insert_shares_order__update_balance($username, $shares_type, $interesting_shares);
-        redirect_with_message('index.php', 's', 'Action of '.$shares_type.' '.$amount.' shares succeeded.');
+        update_shares__insert_shares_order__update_balance($username, $action, $interesting_shares);
+        redirect_with_message('index.php', 's', 'Order completed.');
     }
 
-    function update_shares__insert_shares_order__update_balance($username, $shares_type, $shares){
+    function update_shares__insert_shares_order__update_balance($username, $action, $shares){
         $success = true;
         $err_msg = "";
+
+        if ($action == 'buy')
+            $shares_type = 'offer';
+        else
+            $shares_type = 'demand';
 
         $connection = connect_to_database();
 
@@ -258,16 +254,16 @@
                     throw new Exception("Problems while inserting into shares_order.");
 
                 // sign for balance
-                if ( $shares_type == 'selling')
-                    $sign = "+";
-                else
+                if ( $action == 'buy')
                     $sign = "-";
+                else
+                    $sign = "+";
 
                 // update user
                 $sql_statement = "update shares_user set balance = (balance $sign ($amount * $price))
                               where email = '$username'";
                 if ( !mysqli_query($connection, $sql_statement) )
-                    throw new Exception("Problems while updating shares_user.".$sql_statement);
+                    throw new Exception("Problems while updating shares_user.");
             }
 
             if (!mysqli_commit($connection))

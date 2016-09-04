@@ -29,6 +29,7 @@
 
     <link href="shares_style.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="auth_functions.js"></script>
+    <script type="text/javascript" src="general_functions.js"></script>
 </head>
 <body>
 
