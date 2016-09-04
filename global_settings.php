@@ -1,5 +1,5 @@
 <?php
-    // theater map
+    // shares book
     define("TABLE_ROWS", 5);
 
     // database

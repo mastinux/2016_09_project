@@ -29,27 +29,19 @@
     <![endif]-->
 
     <link href="shares_style.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="shares_functions.js"></script>
     <script type="text/javascript" src="general_functions.js"></script>
+    <script type="text/javascript" src="shares_functions.js"></script>
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
 
-    <noscript>
-        <div class="no-script-warning">
-            Sorry: Your browser does not support or has disabled javascript.
-        </div>
-        <br>
-        <div class="no-script-info">
-            Please use a different browser or enabled javascript.
-        </div>
-        <br>
-    </noscript>
+    <?php
+        include 'navbar.php';
+        include 'no_script_messages.html';
+        manage_messages();
+    ?>
 
-    <?php manage_messages(); ?>
-
-    <div class="col-lg-4" id="left-panel">
+<div class="col-lg-4" id="left-panel">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <?php if ($username){?>
@@ -211,9 +203,9 @@
     <script type="text/javascript">
         if (navigator.cookieEnabled == false) {
             // preventing site usage
-            printCookieDisabledMessage();
             removeElementById('left-panel');
             removeElementById('right-panels');
+            printCookieDisabledMessage();
         }
     </script>
 

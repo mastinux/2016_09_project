@@ -26,7 +26,7 @@
     function check_enabled_cookies(){
         setcookie('test', 'test', time() + 60*60);
         if ( !isset($_COOKIE['test']) )
-            redirect_with_message("index.php", "", "");
+            redirect_with_message("index.php", "w", "In order to use our site please enable cookies.");
     }
 
     function redirect_with_message($page, $message_type, $message){

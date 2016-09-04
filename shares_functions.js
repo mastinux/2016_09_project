@@ -1,3 +1,7 @@
+function printCookieDisabledMessage() {
+    printMessage('warning', 'Cookies disabled, to use this site you have to enable them.')
+}
+
 function checkAmount(){
     var amount = parseInt(document.getElementById('amount-of-shares').value);
     
